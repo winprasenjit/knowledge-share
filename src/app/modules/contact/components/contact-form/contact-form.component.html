@@ -1,0 +1,42 @@
+<div [formGroup]="contactForm">
+    <div class="row">
+        <div class="col">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Contact Information
+                </div>
+                <div class="card-body">
+                    <input
+                        [ngClass]="inputClass ? inputClass : ''"
+                        class="form-control mb-2"
+                        placeholder="Enter your email"
+                        formControlName="email"
+                    />
+                    <input
+                        [ngClass]="inputClass ? inputClass : ''"
+                        class="form-control mb-2"
+                        placeholder="Enter your mobile"
+                        formControlName="mobile"
+                        maxlength="10"
+                    />
+                    <div
+                        class="alert alert-danger"
+                        *ngIf="
+                            contactForm.get('mobile').touched &&
+                            contactForm.get('mobile').errors &&
+                            contactForm.get('mobile').errors?.notValidMobile
+                        "
+                    >
+                        Please insert valid phone number
+                    </div>
+                    <textarea
+                        [ngClass]="inputClass ? inputClass : ''"
+                        class="form-control"
+                        placeholder="About you"
+                        formControlName="aboutu"
+                    ></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

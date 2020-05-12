@@ -1,0 +1,234 @@
+<main>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">
+                            Create Account
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form
+                            role="form"
+                            (ngSubmit)="onSubmit(user)"
+                            [formGroup]="user"
+                            novalidate
+                        >
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputFirstName"
+                                            >First Name</label
+                                        ><input
+                                            class="form-control py-4"
+                                            id="inputFirstName"
+                                            type="text"
+                                            placeholder="Enter first name"
+                                            formControlName="firstname"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputLastName"
+                                            >Last Name</label
+                                        ><input
+                                            class="form-control py-4"
+                                            id="inputLastName"
+                                            type="text"
+                                            placeholder="Enter last name"
+                                            formControlName="lastname"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label
+                                    class="small mb-1"
+                                    for="inputEmailAddress"
+                                    >Username</label
+                                ><input
+                                    class="form-control py-4"
+                                    id="inputEmailAddress"
+                                    type="text"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Enter username"
+                                    formControlName="username"
+                                />
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputPassword"
+                                            >Password</label
+                                        ><input
+                                            class="form-control py-4"
+                                            id="inputPassword"
+                                            type="password"
+                                            placeholder="Enter password"
+                                            formControlName="password"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label
+                                            class="small mb-1"
+                                            for="inputConfirmPassword"
+                                            >Confirm Password</label
+                                        ><input
+                                            class="form-control py-4"
+                                            id="inputConfirmPassword"
+                                            type="password"
+                                            placeholder="Confirm password"
+                                            formControlName="confirmPassword"
+                                        />
+                                        <div
+                                            class="alert alert-danger mt-1"
+                                            *ngIf="
+                                                user.get('confirmPassword')
+                                                    .touched &&
+                                                user.get('password').touched &&
+                                                user.get('confirmPassword')
+                                                    .errors &&
+                                                !user.get('confirmPassword')
+                                                    .errors
+                                                    ?.ValidConfirmPassword
+                                            "
+                                        >
+                                            Confirm Password doesn't match
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-0">
+                                        <label class="small mb-0" for="sex"
+                                            >sex</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="custom-control custom-radio custom-control"
+                                    >
+                                        <input
+                                            type="radio"
+                                            id="customRadioInline1"
+                                            formControlName="sex"
+                                            value="Male"
+                                            class="custom-control-input"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="customRadioInline1"
+                                            >Male</label
+                                        >
+                                    </div>
+                                    <div
+                                        class="custom-control custom-radio custom-control-inline"
+                                    >
+                                        <input
+                                            type="radio"
+                                            id="customRadioInline2"
+                                            formControlName="sex"
+                                            value="Female"
+                                            class="custom-control-input"
+                                        />
+                                        <label
+                                            class="custom-control-label"
+                                            for="customRadioInline2"
+                                            >Female</label
+                                        >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="dob"
+                                            >Date of Birth</label
+                                        >
+                                        <input
+                                            id="dobPicker"
+                                            class="form-control mr-2"
+                                            placeholder="yyyy-mm-dd"
+                                            formControlName="dob"
+                                            ngbDatepicker
+                                            #d="ngbDatepicker"
+                                        />
+                                        <div class="input-group-append">
+                                            <button
+                                                id="dobPickerBtn"
+                                                class="fa fa-calendar-o"
+                                                (click)="d.toggle()"
+                                                type="button"
+                                            ></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" for="subject"
+                                    >Subject</label
+                                ><select
+                                    id="subject"
+                                    class="form-control"
+                                    formControlName="subject"
+                                    multiple
+                                >
+                                    <option
+                                        *ngFor="let subject of subjectList"
+                                        [value]="subject.name"
+                                        >{{ subject.name }}</option
+                                    >
+                                </select>
+                            </div>
+                            <contact-form
+                                [inputClass]="'py-4'"
+                                [group]="user.controls.contact['controls'][0]"
+                            ></contact-form>
+                            <div class="form-group">
+                                <div
+                                    class="custom-control custom-checkbox my-1 mr-sm-2"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="isAgree"
+                                        formControlName="isAgree"
+                                    />
+                                    <label
+                                        class="custom-control-label"
+                                        for="isAgree"
+                                        >Are you agree</label
+                                    >
+                                </div>
+                            </div>
+                            <div class="form-group mt-4 mb-0">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary btn-block"
+                                    [disabled]="!user.valid"
+                                >
+                                    Create account
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="small">
+                            <a [routerLink]="['/login']"
+                                >Have an account? Go to login</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

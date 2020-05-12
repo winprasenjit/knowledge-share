@@ -1,0 +1,7 @@
+<div class="action-buttons row button-row mt-2 mb-2">
+    <div class="col-md-12 col-ld-12 col-sm-12 col-xs-12">
+        <button class="btn btn-primary mr-1" (click)="createFn()" *ngIf="!hideCreateBtn">Create</button>
+        <button class="btn btn-primary mr-1" (click)="updateFn()" [disabled]="!isSelected">Update</button>
+        <button class="btn btn-danger mr-1" (click)="deleteFn()" [disabled]="!isSelected">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="user-list">
+    <action-buttons class="action-btn" [disabledWhen]="this.selectedItems"
+        (create)="createCategory()"
+        (update)="updateCategory()"
+        (delete)="deleteCategory()">
+    </action-buttons>
+    <custom-grid class="custom-grid" *ngIf="columnLoaded"
+        [(column-list)]="column"
+        [(data-set)]="category"
+        (gridEvent)="trackEvent($event)">
+    </custom-grid>
+</div>

@@ -1,0 +1,33 @@
+.avg {
+    font-size:77px;
+    padding-top: 20px;
+    color:#5CB85C;
+}
+
+.details {
+    min-height: 355px;
+    display: inline-block;
+}
+
+.rating {
+    padding-left:40px;
+}
+
+.skillLine {
+    display:inline-block;
+    width:100%;
+    padding: 3px 4px;
+}
+
+.skills {
+    text-decoration:underline;
+}
+
+div.skill {
+    background: #F58723;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 3px 4px;
+    width:70px;
+}

@@ -1,0 +1,26 @@
+<div
+    [attr.id]="isLoggedIn ? 'main-page' : 'layoutAuthentication'"
+    class="sb-nav-fixed"
+>
+    <app-header *ngIf="isLoggedIn"></app-header>
+    <div
+        [attr.id]="
+            isLoggedIn ? 'layoutSidenav' : 'layoutAuthentication_content'
+        "
+    >
+        <sidebar *ngIf="isLoggedIn" [hidden]="isHome"></sidebar>
+        <div
+            [attr.id]="isLoggedIn ? 'layoutSidenav_content' : 'login-container'"
+        >
+            <main>
+                <div class="container-fluid">
+                    <router-outlet></router-outlet>
+                </div>
+            </main>
+            <app-footer *ngIf="isLoggedIn && !isHome"></app-footer>
+        </div>
+    </div>
+    <div id="layoutAuthentication_footer" *ngIf="!isLoggedIn || isHome">
+        <app-footer></app-footer>
+    </div>
+</div>

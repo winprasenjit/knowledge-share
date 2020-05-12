@@ -1,0 +1,11 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">{{data.name}}</div>
+    <div class="panel-body">
+            <input placeholder="add a task" type="text" [(ngModel)]="taskname">
+        <button color="primary" (click)="addTask()">Add Task</button>
+
+            <a  href="javascript:void(0)"
+                (click) ="removeTask(task)"
+                *ngFor="let task of taskList | async"> {{ task.taskname }} </a>
+    </div>
+</div>

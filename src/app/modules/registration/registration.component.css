@@ -1,0 +1,11 @@
+#dobPicker,.input-group-append{
+    display: inline;
+}
+#dobPicker{
+    width: 80%;
+}
+#dobPickerBtn{
+    position: relative;
+    top: 5px;
+    font-size: 30px;
+}

@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h4>Create Category</h4>
+    <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')"
+    >
+        <span aria-hidden="true">&times;</span>
+    </button>categoryForm
+</div>
+<form (ngSubmit)="onSubmit(categoryForm)" [formGroup]="categoryForm" novalidate>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-12">
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Category"
+                    formControlName="name"
+                />
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button
+            type="submit"
+            class="btn btn-primary"
+
+            color="primary"
+        >
+            Submit
+        </button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+[{
+    "headerName": "Name",
+    "field": "name",
+    "width": 100
+}, {
+    "headerName": "Username",
+    "field": "username",
+    "width": 100
+}, {
+    "headerName": "Email",
+    "field": "email",
+    "width": 100
+}, {
+    "headerName": "Mobile",
+    "field": "mobile",
+    "width": 100
+}, {
+    "headerName": "Rating",
+    "field": "rating",
+    "hide":true,
+    "width": 100
+}, {
+    "headerName": "Rating",
+    "field": "displayedRating",
+    "width": 100
+}]

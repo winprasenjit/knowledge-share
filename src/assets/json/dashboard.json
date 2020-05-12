@@ -1,0 +1,29 @@
+[{
+    "id" : 1,
+    "type" : 1,
+    "component" : "AddTaskComponent",
+    "data"  : {"name":"Add a new task"},
+    "posX" : 0,
+    "posY": 0,
+    "width" :4,
+    "height" :4
+},
+{
+    "id" : 2,
+    "type" : 2,
+    "component" : "ListTaskComponent",
+    "data"  : {"name":"Task List"},
+    "posX" : 4,
+    "posY": 0,
+    "width" :4,
+    "height" :4
+},{
+    "id" : 3,
+    "type" : 2,
+    "component" : "ImageUploaderComponent",
+    "data"  : {"name":"Image Uploader","url":"http://127.0.0.1:4000/upload", "folder":"upload"},
+    "posX" : 8,
+    "posY": 0,
+    "width" :4,
+    "height" :4
+}]

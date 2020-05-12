@@ -1,0 +1,16 @@
+.panel.panel-primary{
+    resize: both;
+    overflow: hidden;
+}
+.file-input-container{
+    min-height: 34px !important;
+}
+.file-input{
+    margin-top: 4px;
+}
+.button-container{
+    padding-left: 5px;
+}
+.upload-btn{
+    float: right;
+}

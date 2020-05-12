@@ -1,0 +1,32 @@
+.grid-container .table{
+    margin-bottom: 0;
+}
+.grid-row:hover{
+    background-color: #eee;
+}
+.even {
+    background-color: #f9f9f9;
+}
+
+.odd {
+    background-color: #FFF;
+}
+.selected {
+    background-color: #d6d5d5;
+}
+.material-pagination{
+    float: right;
+}
+.grid-container .custom-bootstrap-table .sl-no{
+    width: 50px !important;
+}
+.grid-container .JColResizer > tbody > tr > td, .JColResizer > tbody > tr > th{
+    padding: 8px !important;
+}
+.grid-container .form-group{
+    margin-bottom: 0;
+}
+.grid-container .fa.fa-sort{
+    float: right;
+    line-height: 1.5;
+}

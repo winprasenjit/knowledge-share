@@ -1,0 +1,12 @@
+<div class="grid-stack">
+    <div class="grid-stack-item"
+        *ngFor="let panel of panels"
+        [attr.data-gs-x]="panel.posX"
+        [attr.data-gs-y]="panel.posY"
+        [attr.data-gs-width]="panel.width"
+        [attr.data-gs-height]="panel.height">
+        <div class="grid-stack-item-content">
+            <template #item></template>
+        </div>
+    </div>
+</div>
